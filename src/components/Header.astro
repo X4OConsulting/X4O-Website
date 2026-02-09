@@ -141,29 +141,15 @@ function isActive(href: string): boolean {
   </nav>
 </header>
 
-<!-- Scroll behaviour: add glass-dark background on scroll -->
+<!-- Mobile menu auto-close on link click -->
 <script>
-  const header = document.getElementById('site-header');
-  if (header) {
-    const onScroll = () => {
-      if (window.scrollY > 20) {
-        header.classList.add('glass-dark');
-      } else {
-        header.classList.remove('glass-dark');
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    // Close mobile menu when a link is clicked
-    const toggle = document.getElementById('mobile-menu-toggle') as HTMLInputElement | null;
-    if (toggle) {
-      document.querySelectorAll('#site-header a').forEach((link) => {
-        link.addEventListener('click', () => {
-          toggle.checked = false;
-        });
+  const toggle = document.getElementById('mobile-menu-toggle') as HTMLInputElement | null;
+  if (toggle) {
+    document.querySelectorAll('#site-header a').forEach((link) => {
+      link.addEventListener('click', () => {
+        toggle.checked = false;
       });
-    }
+    });
   }
 </script>
 
