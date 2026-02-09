@@ -20,6 +20,13 @@
   status = 301
   force = true
 
+# MAINTENANCE MODE - enabled
+[[redirects]]
+  from = "/*"
+  to = "/maintenance.html"
+  status = 200
+  force = true
+
 # Custom 404
 [[redirects]]
   from = "/*"
