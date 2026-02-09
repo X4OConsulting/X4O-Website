@@ -1,0 +1,198 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section class="hero-gradient relative overflow-hidden">
+    <div class="absolute inset-0 bg-mesh opacity-30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Contact Us</h1>
+      <p class="text-lg md:text-xl text-primary-200 max-w-2xl mx-auto">
+        We always want to hear from you
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="min-h-screen bg-mesh">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+
+        <!-- Left Column: Contact Info -->
+        <div class="space-y-10">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-primary-dark mb-6">Get in Touch</h2>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Have a question, need advice, or want to explore how we can help your organization thrive? Reach out to us — we would love to connect.
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary-dark text-lg">Email</h3>
+              <a href="mailto:info@x4o.co.za" class="text-primary-600 hover:text-primary-800 transition-colors text-lg underline underline-offset-2">
+                info@x4o.co.za
+              </a>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary-dark text-lg">Location</h3>
+              <p class="text-gray-600 text-lg">Durbanville, Cape Town, South Africa</p>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div>
+            <h3 class="font-semibold text-primary-dark text-lg mb-4">Follow Us</h3>
+            <div class="flex gap-4">
+              <a
+                href="https://www.facebook.com/x4o.co.za"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
+                aria-label="Facebook"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-dark" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Contact Form -->
+        <div>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            action="/contact-success/"
+            class="glass-card rounded-2xl p-8 md:p-10 space-y-6"
+          >
+            <!-- Hidden fields for Netlify -->
+            <input type="hidden" name="form-name" value="contact" />
+            <input name="bot-field" class="hidden" />
+
+            <!-- Name -->
+            <div>
+              <label for="name" class="block text-sm font-semibold text-primary-dark mb-2">
+                Name <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your full name"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white/80 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-sm font-semibold text-primary-dark mb-2">
+                Email <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="you@example.com"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white/80 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              />
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-primary-dark mb-2">
+                Phone
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+27 12 345 6789"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white/80 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              />
+            </div>
+
+            <!-- Subject -->
+            <div>
+              <label for="subject" class="block text-sm font-semibold text-primary-dark mb-2">
+                Subject
+              </label>
+              <select
+                id="subject"
+                name="subject"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white/80 text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              >
+                <option value="" disabled selected>Select a subject</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Consulting Services">Consulting Services</option>
+                <option value="Coaching Services">Coaching Services</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-sm font-semibold text-primary-dark mb-2">
+                Message <span class="text-red-500">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="5"
+                placeholder="How can we help you?"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white/80 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-vertical"
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+              <button type="submit" class="btn-primary w-full text-center text-lg">
+                Send Message
+              </button>
+            </div>
+          </form>
+
+          <!-- Netlify redirect note -->
+          <!-- After successful submission, Netlify will redirect to /contact-success -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner Image Section -->
+  <section class="w-full py-16 bg-mesh">
+    <div class="max-w-3xl mx-auto px-4">
+      <img
+        src="/images/x4o_banner.jpg"
+        alt="X4O Banner"
+        class="w-full h-auto object-cover rounded-2xl shadow-lg"
+      />
+    </div>
+  </section>
+</Layout>

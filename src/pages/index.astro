@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section class="hero-gradient relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Glassmorphism overlay -->
+    <div class="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
+    <!-- Decorative background elements -->
+    <div class="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl"></div>
+    <div class="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-primary-light/10 blur-3xl"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-4 text-white">
+        Welcome to X4O
+      </h1>
+      <p class="text-2xl md:text-3xl font-semibold text-white/90 mb-6">
+        Supporting You As You Grow
+      </p>
+      <p class="text-lg md:text-xl text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed">
+        We empower your organization's success by harnessing the potential of technology. Our comprehensive, tailored solutions are designed to perfectly align with your unique business and IT needs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/consulting-and-advisory-services" class="btn-primary text-lg">
+          Our Services
+        </a>
+        <a href="/contact" class="btn-outline text-lg" style="color: white; border-color: white;">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 md:py-28 bg-mesh">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" style="color: #174069;">
+        Who We Are
+      </h2>
+      <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+        <p>
+          Welcome to X4O (Pty) Limited, where we empower your organization's success by harnessing the potential of technology. Our comprehensive, tailored solutions are designed to perfectly align with your unique business and IT needs, enabling you to concentrate on what you do best.
+        </p>
+        <p>
+          "Supporting You As You Grow" &mdash; this core principle drives our commitment to every engagement. We recognize the invaluable impact that individuals have on businesses, and that's why we connect you with industry experts who possess the knowledge and experience to help you flourish.
+        </p>
+        <p>
+          At X4O, we're dedicated to fostering skills development and fueling SME/entrepreneurial growth through our insightful advisory and coaching services. Let us be your trusted partner in unlocking your organization's full potential.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid Section -->
+  <section class="py-20 md:py-28 bg-white/50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4" style="color: #174069;">
+        Our Services
+      </h2>
+      <p class="text-center text-gray-600 mb-14 text-lg">Comprehensive solutions tailored to your needs</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Project & Programme Management -->
+        <a href="/consulting-and-advisory-services#project-management" class="glass-card rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group block no-underline">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-xl bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" style="color: #174069;">Project &amp; Programme Management</h3>
+          <p class="text-sm text-gray-600">Strategic delivery frameworks and skilled project execution</p>
+        </a>
+
+        <!-- Advisory -->
+        <a href="/consulting-and-advisory-services#advisory" class="glass-card rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group block no-underline">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-xl bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" style="color: #174069;">Advisory</h3>
+          <p class="text-sm text-gray-600">Expert guidance across public and private sectors</p>
+        </a>
+
+        <!-- Renewable Energy Advisory -->
+        <a href="/consulting-and-advisory-services#renewable-energy" class="glass-card rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group block no-underline">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-xl bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5a.75.75 0 01.75.75v1.5h1.5a.75.75 0 010 1.5h-1.5v1.5a.75.75 0 01-1.5 0v-1.5h-1.5a.75.75 0 010-1.5h1.5v-1.5A.75.75 0 0112 7.5z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" style="color: #174069;">Renewable Energy Advisory</h3>
+          <p class="text-sm text-gray-600">Sustainable energy solutions and transaction advisory</p>
+        </a>
+
+        <!-- Coaching -->
+        <a href="/consulting-and-advisory-services#coaching" class="glass-card rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group block no-underline">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-xl bg-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2" style="color: #174069;">Coaching</h3>
+          <p class="text-sm text-gray-600">Skills development and entrepreneurial growth support</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="hero-gradient py-20 md:py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+        Ready to Transform Your Business?
+      </h2>
+      <p class="text-xl text-white/80 mb-10">
+        Let us help you achieve your strategic goals
+      </p>
+      <a href="/contact" class="btn-primary text-lg">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</Layout>

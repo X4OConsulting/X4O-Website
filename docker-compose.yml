@@ -1,0 +1,19 @@
+services:
+  dev:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "4321:4321"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+
+  preview:
+    build:
+      context: .
+      target: production
+    ports:
+      - "8080:80"

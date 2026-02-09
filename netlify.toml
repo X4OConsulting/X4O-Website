@@ -1,0 +1,50 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Staging branch deploys
+[context.staging]
+  command = "npm run build"
+
+# Production settings
+[context.production]
+  command = "npm run build"
+
+# Redirect www to non-www
+[[redirects]]
+  from = "https://www.x4o.co.za/*"
+  to = "https://x4o.co.za/:splat"
+  status = 301
+  force = true
+
+# Exception: Allow images during maintenance (must be before maintenance redirect)
+[[redirects]]
+  from = "/images/*"
+  to = "/images/:splat"
+  status = 200
+
+# Exception: Allow favicon during maintenance
+[[redirects]]
+  from = "/favicon*"
+  to = "/favicon:splat"
+  status = 200
+
+# MAINTENANCE MODE - enabled
+[[redirects]]
+  from = "/*"
+  to = "/maintenance.html"
+  status = 200
+  force = true
+
+# Custom 404
+[[redirects]]
+  from = "/*"
+  to = "/404/"
+  status = 404
+
+# Form notification
+[build.processing]
+  skip_processing = false

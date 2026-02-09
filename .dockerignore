@@ -1,0 +1,7 @@
+.dockerignore
+node_modules
+dist
+.astro
+.git
+*.md
+.env*
