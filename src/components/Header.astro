@@ -24,11 +24,11 @@ function isActive(href: string): boolean {
 
 <header id="site-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white shadow-md">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 md:h-20">
+    <div class="flex items-center justify-between h-20 md:h-24">
 
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2 shrink-0" aria-label="X4O Home">
-        <img src="/images/logo.png" alt="X4O Logo" class="h-10 w-auto" />
+        <img src="/images/logo.png" alt="X4O Logo" class="h-16 md:h-20 w-auto" />
       </a>
 
       <!-- Desktop Navigation -->
@@ -94,7 +94,7 @@ function isActive(href: string): boolean {
 
       <!-- Mobile Navigation Panel -->
       <div
-        class="fixed inset-0 top-16 md:top-20 -translate-x-full peer-checked:translate-x-0 transition-transform duration-300 ease-in-out lg:hidden z-40"
+        class="fixed inset-0 top-20 md:top-24 -translate-x-full peer-checked:translate-x-0 transition-transform duration-300 ease-in-out lg:hidden z-40"
       >
         <div class="h-full bg-white overflow-y-auto shadow-lg">
           <ul class="flex flex-col px-4 py-6 gap-1">
