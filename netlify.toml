@@ -20,6 +20,18 @@
   status = 301
   force = true
 
+# Exception: Allow images during maintenance (must be before maintenance redirect)
+[[redirects]]
+  from = "/images/*"
+  to = "/images/:splat"
+  status = 200
+
+# Exception: Allow favicon during maintenance
+[[redirects]]
+  from = "/favicon*"
+  to = "/favicon:splat"
+  status = 200
+
 # MAINTENANCE MODE - enabled
 [[redirects]]
   from = "/*"
