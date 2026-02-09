@@ -27,26 +27,8 @@
   body {
     font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
     color: #1a1a2e;
-    background-image: url('/images/bg-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     margin: 0;
     overflow-x: hidden;
-    position: relative;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.40);
-    z-index: -1;
-    pointer-events: none;
   }
 }
 
@@ -92,7 +74,7 @@
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, rgba(23, 64, 105, 0.6) 0%, rgba(30, 90, 138, 0.5) 50%, rgba(23, 64, 105, 0.6) 100%);
+    background: linear-gradient(135deg, #174069 0%, #1e5a8a 50%, #174069 100%);
   }
 
   .btn-primary {
