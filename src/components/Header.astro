@@ -22,7 +22,7 @@ function isActive(href: string): boolean {
 }
 ---
 
-<header id="site-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+<header id="site-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-dark">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 md:h-20">
 
@@ -38,10 +38,10 @@ function isActive(href: string): boolean {
             <a
               href={link.href}
               class:list={[
-                'px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 inline-flex items-center gap-1',
+                'px-3 xl:px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 inline-flex items-center gap-1',
                 isActive(link.href)
-                  ? 'text-primary bg-white/10'
-                  : 'text-primary-50 hover:text-primary hover:bg-white/5',
+                  ? 'text-primary bg-white/15'
+                  : 'text-white hover:text-primary hover:bg-white/10',
               ]}
               aria-current={isActive(link.href) ? 'page' : undefined}
             >
@@ -61,10 +61,10 @@ function isActive(href: string): boolean {
                     <a
                       href={child.href}
                       class:list={[
-                        'block px-4 py-2.5 text-sm transition-colors duration-200',
+                        'block px-4 py-2.5 text-sm font-medium transition-colors duration-200',
                         isActive(child.href)
-                          ? 'text-primary bg-white/10'
-                          : 'text-primary-50 hover:text-primary hover:bg-white/5',
+                          ? 'text-primary bg-white/15'
+                          : 'text-white hover:text-primary hover:bg-white/10',
                       ]}
                     >
                       {child.label}
@@ -81,7 +81,7 @@ function isActive(href: string): boolean {
       <input type="checkbox" id="mobile-menu-toggle" class="hidden peer" aria-hidden="true" />
       <label
         for="mobile-menu-toggle"
-        class="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-lg text-primary-50 hover:text-primary hover:bg-white/10 transition-colors duration-200 cursor-pointer"
+        class="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-lg text-white hover:text-primary hover:bg-white/10 transition-colors duration-200 cursor-pointer"
         aria-label="Toggle navigation menu"
       >
         <!-- Hamburger icon -->
@@ -103,10 +103,10 @@ function isActive(href: string): boolean {
                 <a
                   href={link.href}
                   class:list={[
-                    'block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200',
+                    'block px-4 py-3 rounded-lg text-base font-semibold transition-colors duration-200',
                     isActive(link.href)
-                      ? 'text-primary bg-white/10'
-                      : 'text-primary-50 hover:text-primary hover:bg-white/5',
+                      ? 'text-primary bg-white/15'
+                      : 'text-white hover:text-primary hover:bg-white/10',
                   ]}
                   aria-current={isActive(link.href) ? 'page' : undefined}
                 >
@@ -120,10 +120,10 @@ function isActive(href: string): boolean {
                         <a
                           href={child.href}
                           class:list={[
-                            'block px-4 py-2.5 rounded-lg text-sm transition-colors duration-200',
+                            'block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200',
                             isActive(child.href)
-                              ? 'text-primary bg-white/10'
-                              : 'text-primary-100 hover:text-primary hover:bg-white/5',
+                              ? 'text-primary bg-white/15'
+                              : 'text-white hover:text-primary hover:bg-white/10',
                           ]}
                         >
                           {child.label}
