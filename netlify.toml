@@ -32,12 +32,12 @@
   to = "/favicon:splat"
   status = 200
 
-# MAINTENANCE MODE - enabled
-[[redirects]]
-  from = "/*"
-  to = "/maintenance.html"
-  status = 200
-  force = true
+# MAINTENANCE MODE - disabled on staging, enabled on main
+# [[redirects]]
+#   from = "/*"
+#   to = "/maintenance.html"
+#   status = 200
+#   force = true
 
 # Custom 404
 [[redirects]]
