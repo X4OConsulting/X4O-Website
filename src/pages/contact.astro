@@ -149,6 +149,9 @@ import '../styles/global.css';
                 <option value="General Inquiry">General Inquiry</option>
                 <option value="Consulting Services">Consulting Services</option>
                 <option value="Coaching Services">Coaching Services</option>
+                <option value="Personal Transformation Coaching Booking Request">Personal Transformation Coaching - Book Session</option>
+                <option value="Leadership Coaching Booking Request">Leadership Coaching - Book Session</option>
+                <option value="Corporate Governance Coaching Booking Request">Corporate Governance Coaching - Book Session</option>
                 <option value="Partnership">Partnership</option>
                 <option value="Other">Other</option>
               </select>
@@ -196,3 +199,28 @@ import '../styles/global.css';
     </div>
   </section>
 </Layout>
+
+<script>
+  // Pre-fill subject dropdown from URL query parameter
+  document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const subjectParam = urlParams.get('subject');
+
+    if (subjectParam) {
+      const subjectSelect = document.getElementById('subject') as HTMLSelectElement;
+      if (subjectSelect) {
+        // Decode the URL-encoded subject
+        const decodedSubject = decodeURIComponent(subjectParam);
+
+        // Try to find exact match
+        const option = Array.from(subjectSelect.options).find(
+          opt => opt.value === decodedSubject
+        );
+
+        if (option) {
+          subjectSelect.value = decodedSubject;
+        }
+      }
+    }
+  });
+</script>
