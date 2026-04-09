@@ -1,0 +1,17 @@
+# robots.txt for X4O Consultants
+# Last updated: 2026-02-13
+
+# Allow all crawlers to index all content
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://x4o.co.za/sitemap.xml
+
+# Crawl-delay for specific bots (optional - prevents aggressive crawling)
+# User-agent: *
+# Crawl-delay: 10
+
+# Block specific paths (if needed in future)
+# Disallow: /admin/
+# Disallow: /private/

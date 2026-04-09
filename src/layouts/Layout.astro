@@ -64,8 +64,12 @@ const {
     <title>{title}</title>
   </head>
   <body class="bg-mesh min-h-screen flex flex-col">
+    <!-- Skip to main content link for keyboard accessibility -->
+    <a href="#main-content" class="skip-to-content">
+      Skip to main content
+    </a>
     <Header />
-    <main class="flex-1 pt-20 md:pt-24">
+    <main id="main-content" class="flex-1 pt-20 md:pt-24">
       <slot />
     </main>
     <Footer />

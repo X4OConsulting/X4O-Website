@@ -222,5 +222,141 @@ import '../styles/global.css';
         }
       }
     }
+
+    // Client-side form validation with enhanced UX
+    const form = document.querySelector('form[name="contact"]') as HTMLFormElement;
+    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+    if (form && submitBtn) {
+      // Store original button text
+      const originalBtnText = submitBtn.textContent;
+
+      // Add real-time validation for required fields
+      const nameInput = form.querySelector('#name') as HTMLInputElement;
+      const emailInput = form.querySelector('#email') as HTMLInputElement;
+      const messageInput = form.querySelector('#message') as HTMLTextAreaElement;
+
+      // Function to show error message
+      function showError(input: HTMLInputElement | HTMLTextAreaElement, message: string) {
+        // Remove any existing error message
+        const existingError = input.parentElement?.querySelector('.error-message');
+        if (existingError) {
+          existingError.remove();
+        }
+
+        // Add error styling
+        input.classList.add('border-red-500', 'focus:ring-red-500');
+        input.classList.remove('border-gray-300', 'focus:ring-primary');
+
+        // Create and insert error message
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message text-red-600 text-sm mt-1';
+        errorDiv.textContent = message;
+        input.parentElement?.appendChild(errorDiv);
+      }
+
+      // Function to clear error message
+      function clearError(input: HTMLInputElement | HTMLTextAreaElement) {
+        const existingError = input.parentElement?.querySelector('.error-message');
+        if (existingError) {
+          existingError.remove();
+        }
+
+        // Remove error styling
+        input.classList.remove('border-red-500', 'focus:ring-red-500');
+        input.classList.add('border-gray-300', 'focus:ring-primary');
+      }
+
+      // Validate name field
+      nameInput.addEventListener('blur', () => {
+        if (!nameInput.value.trim()) {
+          showError(nameInput, 'Name is required');
+        } else if (nameInput.value.trim().length < 2) {
+          showError(nameInput, 'Name must be at least 2 characters');
+        } else {
+          clearError(nameInput);
+        }
+      });
+
+      nameInput.addEventListener('input', () => {
+        if (nameInput.value.trim()) {
+          clearError(nameInput);
+        }
+      });
+
+      // Validate email field
+      emailInput.addEventListener('blur', () => {
+        if (!emailInput.value.trim()) {
+          showError(emailInput, 'Email is required');
+        } else if (!emailInput.validity.valid) {
+          showError(emailInput, 'Please enter a valid email address');
+        } else {
+          clearError(emailInput);
+        }
+      });
+
+      emailInput.addEventListener('input', () => {
+        if (emailInput.validity.valid) {
+          clearError(emailInput);
+        }
+      });
+
+      // Validate message field
+      messageInput.addEventListener('blur', () => {
+        if (!messageInput.value.trim()) {
+          showError(messageInput, 'Message is required');
+        } else if (messageInput.value.trim().length < 10) {
+          showError(messageInput, 'Message must be at least 10 characters');
+        } else {
+          clearError(messageInput);
+        }
+      });
+
+      messageInput.addEventListener('input', () => {
+        if (messageInput.value.trim().length >= 10) {
+          clearError(messageInput);
+        }
+      });
+
+      // Form submission with loading state
+      form.addEventListener('submit', (e) => {
+        // Clear all previous errors
+        const allInputs = [nameInput, emailInput, messageInput];
+        let hasErrors = false;
+
+        // Validate all fields
+        allInputs.forEach(input => {
+          if (!input.value.trim()) {
+            showError(input, `${input.labels?.[0]?.textContent?.replace('*', '').trim()} is required`);
+            hasErrors = true;
+          }
+        });
+
+        // Email format check
+        if (emailInput.value.trim() && !emailInput.validity.valid) {
+          showError(emailInput, 'Please enter a valid email address');
+          hasErrors = true;
+        }
+
+        // Message length check
+        if (messageInput.value.trim() && messageInput.value.trim().length < 10) {
+          showError(messageInput, 'Message must be at least 10 characters');
+          hasErrors = true;
+        }
+
+        if (hasErrors) {
+          e.preventDefault();
+          return false;
+        }
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+
+        // Form will submit normally (Netlify handles it)
+        // Loading state will persist until page redirects
+      });
+    }
   });
 </script>
