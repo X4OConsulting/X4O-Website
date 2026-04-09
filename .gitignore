@@ -25,3 +25,22 @@ pnpm-debug.log*
 
 # temp files
 tmpclaude-*
+
+# test output
+playwright-report/
+test-results/
+
+# python cache
+scripts/__pycache__/
+__pycache__/
+*.pyc
+
+# local spreadsheets and word docs (keep locally, not in repo)
+*.xlsx
+X4O_SCOPE.docx
+docs/X4O_SCOPE.docx
+
+# raw/temp data files
+NEW_TASKS_RAW_CSV.csv
+SHEET_RECORDS_TO_ADD.md
+MAINTENANCE_GUIDES_SMARTSHEET_RECORDS.md

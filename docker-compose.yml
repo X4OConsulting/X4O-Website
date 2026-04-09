@@ -3,17 +3,53 @@ services:
     build:
       context: .
       target: dev
+    container_name: x4o-website-dev
     ports:
       - "4321:4321"
     volumes:
       - .:/app
-      - /app/node_modules
+      - x4o-node-modules:/app/node_modules
     environment:
       - NODE_ENV=development
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:4321', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
 
   preview:
     build:
       context: .
       target: production
+    container_name: x4o-website-preview
     ports:
       - "8080:80"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  x4o-node-modules:
+    driver: local
